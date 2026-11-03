@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "held_out": {
+      "characters": 71894,
+      "lines": 1450,
+      "path": "held_out.txt",
+      "sha256": "25964c095bb9c8c7b6b2519a8bbf485be2efe54c2dc1d8062a4860b3c8f54896",
+      "utf8_bytes": 71894
+    },
+    "normalized": {
+      "characters": 718938,
+      "lines": 14045,
+      "path": "normalized.txt",
+      "sha256": "70886957c4bb5293d96a26a38dc3e3968fcbbd689b9b0f1558e2bed69ae7f060",
+      "utf8_bytes": 718938
+    },
+    "train": {
+      "characters": 647044,
+      "lines": 12596,
+      "path": "train.txt",
+      "sha256": "9c4d6362731cbe8cc3062930fc199977239b9c627163d466c7fd00212a77c6d8",
+      "utf8_bytes": 647044
+    }
+  },
+  "gutenberg_boilerplate": {
+    "end_marker_found": true,
+    "start_marker_found": true
+  },
+  "normalization": {
+    "allowed_characters": "abcdefghijklmnopqrstuvwxyz .,;:!?\"'()-\n",
+    "collapse_horizontal_whitespace": true,
+    "lowercase": true,
+    "maximum_consecutive_newlines": 2
+  },
+  "schema_version": 1,
+  "source": {
+    "bytes": 772386,
+    "encoding": "utf-8",
+    "filename": "pride_and_prejudice_pg1342.txt",
+    "sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75"
+  },
+  "split": {
+    "actual_train_fraction": 0.8999997218118948,
+    "method": "contiguous_prefix_train_suffix_held_out",
+    "requested_train_fraction": 0.9,
+    "split_index": 647044
+  }
+}

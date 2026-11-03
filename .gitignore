@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.ruff_cache/
+.venv/
+venv/
+
+# Downloaded or generated corpora
+nano_capstone/data/*.txt
+!nano_capstone/data/demo_source.txt
+artifacts/corpus/*.txt
+
+# Experimental outputs
+outputs/
+experiment/
+

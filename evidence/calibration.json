@@ -1,0 +1,22 @@
+{
+  "candidates": [
+    {
+      "alpha": 0.1,
+      "held_out_cross_entropy_bits_per_character": 2.702705583417638,
+      "order": 3
+    },
+    {
+      "alpha": 0.1,
+      "held_out_cross_entropy_bits_per_character": 2.1336086776734677,
+      "order": 4
+    },
+    {
+      "alpha": 0.1,
+      "held_out_cross_entropy_bits_per_character": 1.9535667327342727,
+      "order": 5
+    }
+  ],
+  "selected_alpha": 0.1,
+  "selected_order": 5,
+  "selection_rule": "lowest held-out cross-entropy; lower order breaks ties"
+}

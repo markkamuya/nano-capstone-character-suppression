@@ -1,0 +1,36 @@
+*** START OF THE PROJECT GUTENBERG EBOOK A DEMONSTRATION ***
+
+The small model watches one character follow another. It learns that language
+has habits, but those habits are not laws. When its first choice disappears,
+the model must continue with the probability that remains. We can repeat the
+choice, measure the result, and compare it with an unchanged reference.
+
+The experiment values simple evidence. A fixed seed makes each run repeatable.
+A held-out passage prevents the model from grading itself on its lessons. A
+matched control asks whether removing the favorite character matters more than
+removing any character. Entropy, vocabulary, diversity, repetition, statistical
+distance, and word ranks describe different parts of the resulting text.
+
+The small model watches one character follow another. It learns that language
+has habits, but those habits are not laws. When its first choice disappears,
+the model must continue with the probability that remains. We can repeat the
+choice, measure the result, and compare it with an unchanged reference.
+
+The experiment values simple evidence. A fixed seed makes each run repeatable.
+A held-out passage prevents the model from grading itself on its lessons. A
+matched control asks whether removing the favorite character matters more than
+removing any character. Entropy, vocabulary, diversity, repetition, statistical
+distance, and word ranks describe different parts of the resulting text.
+
+The small model watches one character follow another. It learns that language
+has habits, but those habits are not laws. When its first choice disappears,
+the model must continue with the probability that remains. We can repeat the
+choice, measure the result, and compare it with an unchanged reference.
+
+The experiment values simple evidence. A fixed seed makes each run repeatable.
+A held-out passage prevents the model from grading itself on its lessons. A
+matched control asks whether removing the favorite character matters more than
+removing any character. Entropy, vocabulary, diversity, repetition, statistical
+distance, and word ranks describe different parts of the resulting text.
+
+*** END OF THE PROJECT GUTENBERG EBOOK A DEMONSTRATION ***
