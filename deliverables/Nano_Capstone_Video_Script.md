@@ -50,9 +50,9 @@ samples and saved every result.
 
 ## Slide 5 — Generated examples
 
-These are real samples from the final experiment. Both use the same starting
-text and a 100 percent chance of blocking. The only difference is which choice
-gets blocked.
+These are real samples from the final experiment. I did not give the model a
+prompt, so both begin from an empty context. Both use seed zero and a 100
+percent chance of blocking. The only difference is which choice gets blocked.
 
 The sample on the left blocks a random choice at every step. Its writing is
 noisy, but phrases such as “I have to” and “from their name in conversation”
