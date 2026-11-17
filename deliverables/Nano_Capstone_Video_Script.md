@@ -48,7 +48,21 @@ I also compared three model sizes on text they had not seen and kept the one
 that predicted best. The final experiment then completed all 200 planned
 samples and saved every result.
 
-## Slide 5 — Results
+## Slide 5 — Generated examples
+
+These are real samples from the final experiment. Both use the same starting
+text and a 100 percent chance of blocking. The only difference is which choice
+gets blocked.
+
+The sample on the left blocks a random choice at every step. Its writing is
+noisy, but phrases such as “I have to” and “from their name in conversation”
+remain recognizable.
+
+The sample on the right blocks the model's first choice at every step. Most of
+its output no longer resembles words. The graph on the next slide tests whether
+this visible difference appears consistently across all the repeated runs.
+
+## Slide 6 — Results
 
 The red line shows what happened when I removed the model's first choice. As the
 removal rate increased, the percentage of recognizable words fell from about 61
@@ -60,7 +74,7 @@ This difference is the key result. The text did not break down merely because I
 removed an option. It broke down because I repeatedly removed the option the
 model considered best.
 
-## Slide 6 — What the result means
+## Slide 7 — What the result means
 
 This model relied heavily on its first choice. Removing that character produced
 more varied text, but far fewer recognizable words.

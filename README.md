@@ -49,7 +49,7 @@ model, and intervention rather than modern language models generally.
 
 ## Presentation materials
 
-- [Six-slide video deck](deliverables/Nano_Capstone_Video_Deck.pptx)
+- [Seven-slide video deck](deliverables/Nano_Capstone_Video_Deck.pptx)
 - [Four-to-five-minute narration script](deliverables/Nano_Capstone_Video_Script.md)
 - [Full findings summary](evidence/final_run_2026-11-17/FINDINGS.md)
 
