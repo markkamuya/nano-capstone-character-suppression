@@ -6,77 +6,74 @@ Target length: approximately 4–5 minutes.
 
 What happens when you cannot have your first choice?
 
-My Nano Capstone asks that question of a small text-generating model. I
-repeatedly prevent it from choosing the character it considers most likely to
-come next, then measure how its writing changes.
+My Nano Capstone asks that question of a small text-generating model. Each time
+the model writes a character, it has a first choice for what should come next. I
+repeatedly remove that choice and measure how the writing changes.
 
-## Slide 2 — Intervention
+## Slide 2 — How the experiment works
 
-At each step, the model assigns probabilities to possible next characters.
-After the letters *t* and *h*, for example, *e* receives about 57 percent
-probability.
+The model writes one character at a time. Before choosing, it gives every
+possible next character a probability.
 
-In the experimental condition, I sometimes remove that first choice and
-redistribute its probability among the remaining characters. The control
-removes a random option at the same rate. This comparison separates the effect
-of denying the first choice from the general effect of deleting any option.
+After the letters *t* and *h*, for example, the model gives *e* about 57 percent
+probability. That makes *e* its first choice.
 
-## Slide 3 — Design
+In the main test, I sometimes remove that first choice and make the model choose
+from the remaining characters. I also need a fair comparison. In the second
+condition, I remove one random character at the same rate. If both conditions
+change the text equally, then simply removing an option caused the effect. If
+removing the first choice changes it more, then that choice had a special role.
 
-I trained the model on the public-domain text of *Pride and Prejudice*. I
-reserved the last 10 percent as unseen test text and selected the model before
-examining the suppression results.
+## Slide 3 — What I tested
 
-The final experiment uses five intervention rates, two removal rules, and 20
-repeated random seeds. That produces 200 samples of 2,000 characters each.
+The model learned from the public-domain text of *Pride and Prejudice*.
 
-## Slide 4 — Completed work
+I tested five removal rates: zero, 25, 50, 75, and 100 percent. I used both
+removal rules at every rate and repeated every setting 20 times. Five rates,
+multiplied by two rules, multiplied by 20 repetitions, produced 200 text
+samples. Each sample contains 2,000 characters.
 
-Before the final run, I verified the downloaded text against its recorded
-checksum and reran all 28 automated tests. The order-5 model performed best on
-the unseen text, with lower prediction error than orders three and four. Here,
-order five means the model can use up to four preceding characters when
-predicting the next one.
+Repeating the test matters because one generated sample can be unusually good
+or bad by chance. Twenty repetitions show whether the pattern is consistent.
 
-The final experiment then completed all 200 planned samples. These checks do
-not prove the hypotheses, but they establish that the system ran as specified.
+## Slide 4 — Checks before the final run
+
+Before running the experiment, I checked three things.
+
+First, the cleaned book contained 718,938 characters. Second, all 28 automated
+tests passed. These tests check details such as whether the probabilities add
+up correctly and whether the same random seed reproduces the same output.
+
+I also compared three model sizes on text they had not seen and kept the one
+that predicted best. The final experiment then completed all 200 planned
+samples and saved every result.
 
 ## Slide 5 — Results
 
-The red line shows first-choice suppression. As its rate increased, the
-proportion of generated words found in the reference vocabulary fell from
-about 61 percent to 10 percent. At the same time, statistical distance from the
-unseen text more than doubled.
+The red line shows what happened when I removed the model's first choice. As the
+removal rate increased, the percentage of recognizable words fell from about 61
+percent to 10 percent. At the same time, the generated text became increasingly
+different from the original book.
 
-The blue random-removal control remained almost flat. The contrast suggests
-that the effect comes from targeting the model's preferred character, rather
-than simply deleting one possibility.
+The blue line shows random removal. It stayed almost flat on both measurements.
+This difference is the key result. The text did not break down merely because I
+removed an option. It broke down because I repeatedly removed the option the
+model considered best.
 
-## Slide 6 — Interpretation and limitations
+## Slide 6 — What the result means
 
-Two hypotheses received clear descriptive support: the output moved further
-from the reference text, and targeting the first choice mattered far more than
-random removal.
+This model relied heavily on its first choice. Removing that character produced
+more varied text, but far fewer recognizable words. More variety therefore did
+not mean better language.
 
-The diversity hypothesis needs nuance. Diversity rose, but recognizable words
-collapsed, so variety alone did not indicate quality. The repetition hypothesis
-was not supported because repeated four-character sequences decreased.
+One prediction did not hold. I expected strong suppression might increase
+repetition, but repeated character sequences became less common instead.
 
-The largest limitation is the baseline. Even without suppression, this simple
-model produces noisy, only partly recognizable English. The findings therefore
-describe this character model trained on one novel, not modern language models
-generally.
+The largest limitation is the model itself. Even without suppression, its text
+is noisy and only partly recognizable. The result describes one simple model
+trained on one book. It does not establish how every language model would
+respond.
 
-## Slide 7 — Why it matters
-
-The project matters because a model's probability distribution is only part of
-generation. The rule used to choose from that distribution can change what
-readers eventually see.
-
-For anyone evaluating generative text, this run offers two practical lessons:
-measure diversity alongside validity, and compare a targeted intervention with
-an appropriate control.
-
-For discussion, I would especially value advice on two questions. Should I
-strengthen the baseline before testing another corpus? And which measurement
-best captures the point where language breaks down?
+The practical lesson is that variety cannot be judged alone. When evaluating
+generated text, we must also ask whether the output remains recognizable and
+meaningful.
