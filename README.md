@@ -12,11 +12,11 @@ removes a random candidate instead. The comparison tests whether the observed
 changes come specifically from denying the model its first choice rather than
 from merely reducing its options.
 
-The final study will compare recognizable-word frequency, vocabulary diversity,
+The completed study compares recognizable-word frequency, vocabulary diversity,
 repetition, character entropy, statistical distance from held-out English, and
-word rank-frequency structure. The final experiment has not yet been run.
+word rank-frequency structure across 200 generated samples.
 
-## Current progress
+## Completed study
 
 - Selected and froze Jane Austen's *Pride and Prejudice*, Project Gutenberg
   ebook 1342, as the corpus.
@@ -29,10 +29,29 @@ word rank-frequency structure. The final experiment has not yet been run.
   control at five intervention rates.
 - Added deterministic seeds, auditable outputs, six metric families, and 28
   automated tests.
-- Verified that the demonstration pipeline produces all expected samples.
+- Completed the frozen full experiment: 5 rates × 2 conditions × 20 seeds, with
+  all 200 expected samples generated successfully.
+- Found a clear dose-response pattern under first-choice suppression, while the
+  matched random-removal control remained nearly flat.
+- Found that full first-choice suppression reduced recognizable-word frequency
+  from 0.613 to 0.105 and increased statistical distance from held-out text from
+  0.334 to 0.784.
+- Found that diversity increased while recognizable words collapsed, showing
+  that more varied output did not mean better language.
+- Found no support for the predicted increase in repetition; repeated
+  four-character sequences instead became less common.
 
-The demonstration proves that the system runs; it is not evidence for the
-research hypotheses.
+The main limitation is that the baseline model already produces noisy, only
+partly recognizable English. The findings therefore describe this corpus,
+model, and intervention rather than modern language models generally.
+
+![Three-panel summary of the final results](evidence/final_run_2026-11-17/core_results.svg)
+
+## Presentation materials
+
+- [Seven-slide video deck](deliverables/Nano_Capstone_Video_Deck.pptx)
+- [Four-to-five-minute narration script](deliverables/Nano_Capstone_Video_Script.md)
+- [Full findings summary](evidence/final_run_2026-11-17/FINDINGS.md)
 
 ## Repository structure
 
@@ -46,6 +65,10 @@ research hypotheses.
 - `nano_capstone/tests/`: automated tests.
 - `evidence/`: the frozen corpus manifest and calibration results, without the
   copyrighted/downloaded text files themselves.
+- `evidence/final_run_2026-11-17/`: condition statistics, paired comparisons,
+  the findings summary, run manifest, and the main results figure.
+- `nano_capstone/analyze.py`: reproducible analysis and figure generation for a
+  completed pipeline run.
 - `PROCESS_LOG.md`: decisions, validation, AI use, and remaining work.
 
 ## Run the demonstration
@@ -88,7 +111,8 @@ The expected source checksum and all processed-file checksums are recorded in
 
 ## Run the final experiment
 
-Only run this after the protocol has been reviewed and frozen:
+The frozen full run was completed on 17 November 2026. To reproduce it in a new
+output directory:
 
 ```bash
 python3 -m nano_capstone.pipeline \
@@ -97,4 +121,12 @@ python3 -m nano_capstone.pipeline \
 ```
 
 The pipeline refuses to overwrite or mix results from an earlier run.
+
+Summarize a completed run and regenerate the evidence files:
+
+```bash
+python3 -m nano_capstone.analyze \
+  outputs/final_run \
+  evidence/final_run
+```
 

@@ -58,8 +58,8 @@ research hypotheses because the included corpus is synthetic.
   2.703, 2.134, and 1.954 bits per character, respectively. Order 5 was frozen
   because it achieved the lowest score under the predefined selection rule.
 
-This calibration used no suppression results. The final intervention experiment
-therefore remains unrun until the protocol is reviewed and frozen.
+This calibration used no suppression results. The model choice was therefore
+frozen independently of the intervention outcomes.
 
 ### Decisions and rationale
 
@@ -76,17 +76,43 @@ therefore remains unrun until the protocol is reviewed and frozen.
   allowing disagreement among validity, diversity, repetition, and statistical
   distance to remain visible.
 
-### Remaining work
+## 17 November 2026 Frozen Full Run and Analysis
 
-1. Freeze the final protocol before running the study.
-2. Run the actual experiment in a new output directory.
-3. Add uncertainty intervals, targeted-versus-control comparisons, figures, and
-   sensitivity checks to the analysis.
+### Work completed
+
+- Verified the source-text checksum and reran all 28 automated tests.
+- Ran the frozen experiment with five intervention rates, two removal rules,
+  twenty seeds per condition, and 2,000 generated characters per sample.
+- Completed all 200 expected runs and preserved their configurations, generated
+  samples, measurements, and manifest.
+- Added a reproducible analysis command that calculates condition means, 95%
+  confidence intervals, and paired targeted-versus-control differences.
+- Produced a three-panel results figure and a written findings summary for the
+  paper and presentation.
+
+### Results and interpretation
+
+First-choice suppression produced a strong dose-response pattern while random
+removal remained nearly flat. From baseline to full suppression, the
+recognizable-word rate fell from 0.613 to 0.105 and Jensen-Shannon distance from
+held-out text rose from 0.334 to 0.784. Vocabulary diversity rose from 0.682 to
+0.848, but that increase accompanied a collapse in recognizable words. The
+repetition hypothesis was not supported: repeated four-character sequences
+became less common rather than more common.
+
+### Limitation and decision
+
+The baseline text is already noisy and only partly recognizable. I will not
+present this run as evidence about modern language models generally. It shows
+how the intervention changes one simple character model trained on one novel.
+The next methodological decision is whether to strengthen the baseline before
+adding a second corpus or additional model configuration.
 
 ### AI use
 
-The implementation was produced with multi-agent AI assistance. Separate agents
-worked on corpus preparation, model behavior, and experiment metrics; the
-components were then integrated and tested together. The student should review
-the code, verify the methodological choices, and document any revisions before
-using the system for the final study.
+Multi-agent AI assistance produced code components for corpus preparation,
+model behavior, experiment metrics, analysis, and presentation materials. I
+selected the research question and experimental constraints and directed the
+integration. I remain responsible for reviewing the code and method, checking
+the reported values against the saved outputs, interpreting the evidence, and
+presenting the limitations accurately.

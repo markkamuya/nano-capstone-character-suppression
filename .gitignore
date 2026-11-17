@@ -14,3 +14,7 @@ artifacts/corpus/*.txt
 outputs/
 experiment/
 
+# Private presentation build and validation artifacts
+.codex-build/
+.chart-data-*/
+
