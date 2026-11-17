@@ -63,8 +63,7 @@ model considered best.
 ## Slide 6 — What the result means
 
 This model relied heavily on its first choice. Removing that character produced
-more varied text, but far fewer recognizable words. More variety therefore did
-not mean better language.
+more varied text, but far fewer recognizable words.
 
 One prediction did not hold. I expected strong suppression might increase
 repetition, but repeated character sequences became less common instead.
